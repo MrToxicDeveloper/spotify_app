@@ -1,4 +1,8 @@
+
+
+
 import 'package:flutter/material.dart';
+import 'package:spotify_app/audio_player/model/audio_model.dart';
 
 class HomeProvider extends ChangeNotifier {
   List Logo = [
@@ -13,57 +17,48 @@ class HomeProvider extends ChangeNotifier {
     "Enemy",
     "Montero",
   ];
+  List song = [
+    "lib/utils/audio/otr.mp3",
+    "lib/utils/audio/Senorita.mp3",
+    "lib/utils/audio/Enemy.mp3",
+    "lib/utils/audio/Montero.mp3",
+  ];
 
   List Logo2 = [
-    "lib/utils/images/oldtown.jpg",
-    "lib/utils/images/senorita.jpg",
-    "lib/utils/images/enemy.jpg",
-    "lib/utils/images/montero.jpg",
+    "lib/utils/images/mmj.jpg",
+    "lib/utils/images/wohdin.jpg",
+    "lib/utils/images/apnabanale.jpg",
+    "lib/utils/images/kesariya.jpg",
   ];
   List name2 = [
-    "Old Town Road",
-    "Senorita",
-    "Enemy",
-    "Montero",
+    "Maan meri jaan",
+    "Woh din",
+    "Apna bana le",
+    "Kesariya",
+  ];
+  List song2 = [
+    "lib/utils/audio/otr.mp3",
+    "lib/utils/audio/Senorita.mp3",
+    "lib/utils/audio/Enemy.mp3",
+    "lib/utils/audio/Montero.mp3",
   ];
 
   List Logo3 = [
-    "lib/utils/images/oldtown.jpg",
-    "lib/utils/images/senorita.jpg",
-    "lib/utils/images/enemy.jpg",
-    "lib/utils/images/montero.jpg",
+    "lib/utils/images/ratanlambi.jpg",
+    "lib/utils/images/atsh.jpg",
+    "lib/utils/images/ranjha.jpg",
+    "lib/utils/images/kt.jpg",
   ];
   List name3 = [
-    "Old Town Road",
-    "Senorita",
-    "Enemy",
-    "Montero",
+    "Rataan Lambiyan",
+    "Agar tum sath ho",
+    "Ranjha",
+    "Kaun tujhe",
   ];
-
-  Widget RFY(int index, String name, String Logo) {
-    return Container(
-      height: 125,
-      width: 150,
-      child: Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Image.asset("${Logo}", fit: BoxFit.fitHeight),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.only(bottom: 20),
-              child: ListTile(
-                title: Text(
-                  "${name}",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  List song3 = [
+    "lib/utils/audio/otr.mp3",
+    "lib/utils/audio/Senorita.mp3",
+    "lib/utils/audio/Enemy.mp3",
+    "lib/utils/audio/Montero.mp3",
+  ];
 }

@@ -19,7 +19,7 @@ class _SearchViewState extends State<SearchView> {
             Container(
               height: 80,
               width: double.infinity,
-              color: Colors.black,
+              color: Colors.red,
               alignment: Alignment.bottomCenter,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -50,19 +50,20 @@ class _SearchViewState extends State<SearchView> {
               ),
             ),
             Row(
-              mainAxisSize: MainAxisSize.min,
+              //mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
-                  height: 60,
-                  width: double.infinity,
-                  color: Colors.white,
-                  alignment: Alignment.center,
-                  child: Row(
-                    // mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.search_rounded),
-                      Text("Artist, songs, or podcasts")
-                    ],
+                Expanded(
+                  child: Container(
+                    height: 60,
+                    color: Colors.white,
+                    alignment: Alignment.center,
+                    child: Row(
+                      // mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.search_rounded),
+                        Text("Artist, songs, or podcasts")
+                      ],
+                    ),
                   ),
                 ),
                 Icon(Icons.mic,color: Colors.white,),
