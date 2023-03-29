@@ -5,7 +5,6 @@ class BottomPro extends ChangeNotifier{
 
   void changeBottom(int value){
     i = value;
-
     notifyListeners();
   }
 }

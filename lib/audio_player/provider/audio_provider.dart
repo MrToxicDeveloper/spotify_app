@@ -6,6 +6,8 @@ class AudioProvider extends ChangeNotifier {
   bool icon = true;
   bool mute = true;
 
+  Duration totalD = Duration(seconds: 0);
+
   String? Song;
 
   AssetsAudioPlayer? audioplayer;
@@ -19,6 +21,14 @@ class AudioProvider extends ChangeNotifier {
   Future<void> playOrPause() async {
     await audioplayer!.playOrPause();
     icon == true ? icon = false : icon = true;
+    notifyListeners();
+  }
+
+  void totalDurationAudio() {
+    audioplayer!
+      ..current.listen((event) {
+        totalD = event!.audio.duration;
+      });
     notifyListeners();
   }
 }

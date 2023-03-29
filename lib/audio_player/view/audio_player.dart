@@ -1,3 +1,4 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -55,7 +56,7 @@ class _AudioPlayerState extends State<AudioPlayer> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     child: Image.asset(
-                      "${m1!.Image}",
+                      "${m1.Image}",
                       height: 250,
                       width: 250,
                       fit: BoxFit.cover,
@@ -78,19 +79,19 @@ class _AudioPlayerState extends State<AudioPlayer> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: ProTrue!.mute == true
-                                ? Icon(
-                              Icons.mic,
-                              color: Colors.white,
-                              size: 60,
-                            )
-                                : Icon(
-                              Icons.mic_off,
-                              color: Colors.white,
-                              size: 60,
-                            )),
+                        // IconButton(
+                        //     onPressed: () {},
+                        //     icon: ProTrue!.mute == true
+                        //         ? Icon(
+                        //       Icons.mic,
+                        //       color: Colors.white,
+                        //       size: 60,
+                        //     )
+                        //         : Icon(
+                        //       Icons.mic_off,
+                        //       color: Colors.white,
+                        //       size: 60,
+                        //     )),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
@@ -125,12 +126,19 @@ class _AudioPlayerState extends State<AudioPlayer> {
                         ),
                       ],
                     ),
-                    Container(
-                      child: Slider(
-                        value: 0.5,
-                        inactiveColor: Colors.white38,
-                        activeColor: Colors.white,
-                        onChanged: (value) {},
+                    PlayerBuilder.currentPosition(
+                      player: ProFalse!.audioplayer!,
+                      builder: (context, position) => Container(
+                        child: Slider(
+                          value: position.inSeconds.toDouble(),
+                          max: ProTrue!.totalD.inSeconds
+                              .toDouble(),
+                          inactiveColor: Colors.white38,
+                          activeColor: Colors.white,
+                          onChanged: (value) {
+                            ProFalse!.audioplayer!.seek(Duration(seconds: value.toInt()));
+                          },
+                        ),
                       ),
                     ),
                   ],

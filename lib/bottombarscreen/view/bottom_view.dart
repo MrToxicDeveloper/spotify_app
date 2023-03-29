@@ -28,9 +28,11 @@ class _BottomBarViewState extends State<BottomBarView> {
       child: Scaffold(
         body: screens[proTrue!.i],
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: proTrue!.i,
           backgroundColor: Colors.black,
           unselectedItemColor: Colors.white38,
           selectedItemColor: Colors.white,
+          // selectedIconTheme: IconThemeData(color: Colors.white),
           onTap: (value) {
             proFalse!.changeBottom(value);
           },

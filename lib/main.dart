@@ -26,7 +26,7 @@ void main() {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: 'home',
+        // initialRoute: 'home',
         routes: {
           '/': (context) => BottomBarView(),
           'home': (context) => HomeView(),

@@ -37,10 +37,10 @@ class HomeProvider extends ChangeNotifier {
     "Kesariya",
   ];
   List song2 = [
-    "lib/utils/audio/otr.mp3",
-    "lib/utils/audio/Senorita.mp3",
-    "lib/utils/audio/Enemy.mp3",
-    "lib/utils/audio/Montero.mp3",
+    "lib/utils/audio/tmmj.mp3",
+    "lib/utils/audio/wohdin.mp3",
+    "lib/utils/audio/abl.mp3",
+    "lib/utils/audio/kesriya.mp3",
   ];
 
   List Logo3 = [
